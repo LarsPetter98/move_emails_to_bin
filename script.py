@@ -33,7 +33,7 @@ status, messages = mail.search(None, f'FROM "{mail_sender3}"')
 #Getting the id for each emal
 email_ids = messages[0].split()
 
-#Adding the "Deleted" flag to the email with the corresponding id
+#Placing a copy of the email with the corresponding id in the bin, then adding the "Deleted" flag to the same email
 for email_id in email_ids:
     status, msg_data = mail.fetch(email_id, "(RFC822)")
     if status == "OK":
